@@ -1,0 +1,17 @@
+# Core dependencies
+pandas>=1.5.0
+numpy>=1.21.0
+scikit-learn>=1.0.0
+matplotlib>=3.5.0
+
+# Performance optimization
+numba>=0.55.0
+cython>=0.29.0
+dask>=2022.0.0
+
+# Visualization
+wordcloud>=1.8.0
+
+# Development tools
+jupyter>=1.0.0
+ipython>=8.0.0 
