@@ -42,8 +42,8 @@ This repository contains a collection of optimized data processing implementatio
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
-cd <repository-name>
+git clone git@github.com:Akshi22/adv_python_final.git
+cd adv_python_final
 ```
 
 2. Set up a virtual environment:
