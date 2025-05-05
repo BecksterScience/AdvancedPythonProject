@@ -8,7 +8,7 @@ This repository contains a collection of optimized data processing implementatio
 - `Grouping/` - Data grouping and memory optimization
 - `Searching/` - String searching implementations
 - `K-Means/` - Text clustering with visualization
-- `Sorting/` - (Coming soon)
+- `Sorting/` - Multiple sorting algorithm implementations with various optimizations
 - `LSH/` - (Coming soon)
 
 ## Features
@@ -37,6 +37,13 @@ This repository contains a collection of optimized data processing implementatio
 - Interactive visualizations
 - Word cloud generation
 - Performance comparison
+
+### Sorting
+- Multiple sorting algorithm implementations (Bubble, Quick, Merge, Heap, Selection, Tim)
+- Optimized versions using Numba and Cython
+- Performance comparison tools
+- Visualization of sorting runtimes
+- Support for both ascending and descending order
 
 ## Getting Started
 
