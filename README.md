@@ -9,7 +9,7 @@ This repository contains a collection of optimized data processing implementatio
 - `Searching/` - String searching implementations
 - `K-Means/` - Text clustering with visualization
 - `Sorting/` - Multiple sorting algorithm implementations with various optimizations
-- `LSH/` - (Coming soon)
+- `LSH_Clustering/` - Product title similarity detection and clustering
 
 ## Features
 
@@ -44,6 +44,14 @@ This repository contains a collection of optimized data processing implementatio
 - Performance comparison tools
 - Visualization of sorting runtimes
 - Support for both ascending and descending order
+
+### LSH Clustering
+- MinHash + LSH implementation with parallel processing
+- Cython-optimized similarity detection
+- TF-IDF + KMeans clustering
+- PCA visualizations
+- WordCloud generation
+- Interactive menu for easy access to all features
 
 ## Getting Started
 
