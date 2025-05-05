@@ -19,6 +19,11 @@ This repository contains a collection of optimized data processing implementatio
 - Memory-efficient processing with categorical encoding
 - Dynamic filtering UI with sliders and dropdowns
 - Support for numeric ranges, categorical selections, and keyword searches
+- Implementation Details:
+  - Cython provides the best performance by compiling filtering logic into C
+  - Pandas and NumPy offer vectorized operations for efficient processing
+  - Dask handles larger-than-memory datasets through partitioning
+  - Numba is not suitable for string filtering due to lack of UTF-8 support
 
 ### Grouping
 - Efficient data grouping operations
@@ -26,6 +31,11 @@ This repository contains a collection of optimized data processing implementatio
 - Performance benchmarking
 - Visualization of results
 - Memory reduction strategies (up to 53% reduction)
+- Implementation Details:
+  - Downcasting numerics using pd.to_numeric(..., downcast=...)
+  - Converting low-cardinality object columns to category dtype
+  - String optimization through astype("category")
+  - Memory reduction from 580MB to 270MB through optimization
 
 ### Searching
 - Fast string searching implementations
@@ -33,6 +43,11 @@ This repository contains a collection of optimized data processing implementatio
 - Memory-efficient processing
 - Performance-optimized versions (Cython ~0.4s, NumPy ~1.0s, Pandas ~1.2s)
 - Support for flexible user queries
+- Implementation Details:
+  - Cython provides ~3× speedup over Pandas through loop compilation
+  - NumPy offers better performance than Pandas but with array overhead
+  - Dask's lazy computation and task graph overhead affects performance
+  - Numba JIT compilation not effective for object/string logic
 
 ### K-Means
 - Text data clustering with TF-IDF vectorization
@@ -40,6 +55,13 @@ This repository contains a collection of optimized data processing implementatio
 - Interactive visualizations with PCA
 - Word cloud generation
 - Performance comparison (scikit-learn 875.6× speedup over baseline)
+- Implementation Details:
+  - TF-IDF vectorization with 1,000 term vocabulary
+  - Stop word removal for meaningful content focus
+  - Pure Python baseline for educational insight
+  - NumPy vectorized operations for faster distance calculations
+  - Numba JIT-compiled version for performance optimization
+  - Scikit-learn as the benchmark implementation
 
 ### Sorting
 - Multiple sorting algorithm implementations (Bubble, Quick, Merge, Heap, Selection, Tim)
@@ -48,6 +70,12 @@ This repository contains a collection of optimized data processing implementatio
 - Visualization of sorting runtimes
 - Support for both ascending and descending order
 - Benchmark results for various implementations
+- Implementation Details:
+  - Quick Sort: Python (0.666s), NumPy (0.008s), Cython (0.941s), Numba (0.033s)
+  - Merge Sort: Python (0.862s), NumPy (0.009s), Cython (0.912s), Numba (0.014s)
+  - Heap Sort: Python (1.712s), NumPy (0.013s), Cython (1.099s), Numba (0.037s)
+  - Timsort: Python (0.235s), NumPy (0.009s), Cython (0.037s), Numba (0.082s)
+  - Selection Sort: Terminated in Python, NumPy (1.740s), Terminated in Cython, Numba (5.285s)
 
 ### LSH Clustering
 - MinHash + LSH implementation with parallel processing (~245s for 22M pairs)
@@ -57,6 +85,14 @@ This repository contains a collection of optimized data processing implementatio
 - WordCloud generation
 - Interactive menu for easy access to all features
 - Support for Jaccard similarity approximation
+- Implementation Details:
+  - MinHash for probabilistic hashing and fixed-length signatures
+  - LSH for clustering similar signatures into buckets
+  - Parallelized MinHash signature generation across 12 CPU cores
+  - TF-IDF vectorization with 5,000 term vocabulary
+  - KMeans clustering with k=10 clusters
+  - PCA for dimensionality reduction and visualization
+  - Word count analysis for cluster interpretation
 
 ## Getting Started
 
@@ -129,6 +165,10 @@ Each module provides multiple implementations optimized for different scenarios:
 - Maximum performance: Use Cython implementations
 - String-heavy tasks: Prefer Cython over Numba
 - Memory optimization: Use categorical encoding and downcasting
+- Clustering: Use LSH pre-filtering for large datasets (>1M entries)
+- Sorting: Use NumPy for native implementations, Numba for custom algorithms
+- Filtering: Use Cython for maximum performance, Pandas for quick development
+- Searching: Use Cython for tight loop performance, avoid Dask for small tasks
 
 ## Contributing
 
