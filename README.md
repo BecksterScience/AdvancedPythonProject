@@ -1,4 +1,4 @@
-# Advanced Python Data Processing Toolkit
+# Advanced Python! Processing Strings with Big Data
 
 This repository contains a collection of optimized data processing implementations in Python, focusing on performance, memory efficiency, and scalability. The toolkit was developed to handle large-scale string datasets, particularly focusing on Amazon product titles, with over 1.4 million entries. Each module provides multiple implementations of common data operations using different Python libraries and optimization techniques.
 
